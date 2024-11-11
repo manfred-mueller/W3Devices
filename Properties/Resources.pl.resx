@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SearchText" xml:space="preserve">
+    <value>Wyszukiwanie we wszystkich urządzeniach</value>
+  </data>
+  <data name="PleaseEnterYourAPIKeyAndSaveItBeforeFetchingData" xml:space="preserve">
+    <value>Proszę wprowadzić klucz API i zapisać go przed pobraniem danych.</value>
+  </data>
+  <data name="APIKeyRequired" xml:space="preserve">
+    <value>Wymagany klucz API</value>
+  </data>
+  <data name="UnauthorizedAccessPleaseCheckYourAPIKeyAndTryAgain" xml:space="preserve">
+    <value>Nieautoryzowany dostęp.</value>
+  </data>
+  <data name="Unauthorized" xml:space="preserve">
+    <value>Nieautoryzowany</value>
+  </data>
+  <data name="ResourceNotFoundPleaseVerifyTheAPIURLAndTryAgain" xml:space="preserve">
+    <value>Nie znaleziono zasobów.</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Nie znaleziono</value>
+  </data>
+  <data name="RequestNotAcceptablePleaseCheckYourRequestHeadersAndTryAgain" xml:space="preserve">
+    <value>Żądanie nie do przyjęcia.</value>
+  </data>
+  <data name="NotAcceptable" xml:space="preserve">
+    <value>Nie do przyjęcia</value>
+  </data>
+  <data name="ErrorFetchingData" xml:space="preserve">
+    <value>Błąd podczas pobierania danych: </value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="YouHaveReachedTheMaximumAPICallsPerMinuteLimit" xml:space="preserve">
+    <value>Osiągnąłeś maksymalny limit wywołań API na minutę.</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Ostrzeżenie</value>
+  </data>
+  <data name="YouHaveReachedTheMaximumAPICallsPerDayLimit" xml:space="preserve">
+    <value>Osiągnąłeś maksymalny dzienny limit wywołań API.</value>
+  </data>
+  <data name="ErrorParsingJSON" xml:space="preserve">
+    <value>Błąd podczas analizowania JSON: </value>
+  </data>
+  <data name="ExportedDisplayedDevicesToSQLiteDatabase" xml:space="preserve">
+    <value>Wyeksportowano wyświetlane urządzenia do bazy danych SQLite.</value>
+  </data>
+  <data name="ExportSuccessful" xml:space="preserve">
+    <value>Eksport udany</value>
+  </data>
+  <data name="ErrorDeletingCachedJSONFile" xml:space="preserve">
+    <value>Błąd podczas usuwania buforowanego pliku JSON: </value>
+  </data>
+  <data name="ErrorSavingDevicesToCache" xml:space="preserve">
+    <value>Błąd podczas zapisywania urządzeń w pamięci podręcznej: </value>
+  </data>
+  <data name="NoDevicesFound" xml:space="preserve">
+    <value>Nie znaleziono urządzeń.</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Informacja</value>
+  </data>
+  <data name="NoCachedDataFound" xml:space="preserve">
+    <value>Nie znaleziono danych w pamięci podręcznej.</value>
+  </data>
+  <data name="ErrorFetchingDevicesFromCache" xml:space="preserve">
+    <value>Błąd podczas pobierania urządzeń z pamięci podręcznej: </value>
+  </data>
+  <data name="LoadDevices" xml:space="preserve">
+    <value>Załaduj urządzenia</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Wyszukiwanie we wszystkich urządzeniach</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Ratować</value>
+  </data>
+  <data name="ApiKey" xml:space="preserve">
+    <value>Klucz API</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Urządzenia W3</value>
+  </data>
+  <data name="GroupName" xml:space="preserve">
+    <value>Nazwa grupy</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="DevName" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>Seryjny</value>
+  </data>
+  <data name="Battery" xml:space="preserve">
+    <value>Bateria</value>
+  </data>
+  <data name="Charging" xml:space="preserve">
+    <value>Ładowanie</value>
+  </data>
+  <data name="Connection" xml:space="preserve">
+    <value>Ostatnie połączenie</value>
+  </data>
+  <data name="Renew" xml:space="preserve">
+    <value>Odnowić</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Ostatnia lokalizacja</value>
+  </data>
+  <data name="PleaseWaitWhileFetchingDeviceData" xml:space="preserve">
+    <value>Proszę czekać, trwa pobieranie danych urządzenia...</value>
+  </data>
+  <data name="APIKeySavedSuccessfully" xml:space="preserve">
+    <value>Klucz API został pomyślnie zapisany</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Sukces</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Numer seryjny</value>
+  </data>
+  <data name="DeviceName" xml:space="preserve">
+    <value>Nazwa urządzenia</value>
+  </data>
+  <data name="APIRateLimitExceededPleaseTryAgainLater" xml:space="preserve">
+    <value>Przekroczono limit szybkości API. Spróbuj ponownie później</value>
+  </data>
+  <data name="RateLimitExceeded" xml:space="preserve">
+    <value>Przekroczony limit szybkości</value>
+  </data>
+  <data name="Serial2" xml:space="preserve">
+    <value>Seryjny 2</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Uwagi</value>
+  </data>
+  <data name="Repairs" xml:space="preserve">
+    <value>Naprawy</value>
+  </data>
+  <data name="SaveAndExit" xml:space="preserve">
+    <value>Zapisz i wyjdź</value>
+  </data>
+  <data name="Edit0" xml:space="preserve">
+    <value>Edytuj {0} dla {1}</value>
+  </data>
+  <data name="DeviceCountByGroup" xml:space="preserve">
+    <value>Liczba urządzeń według grup</value>
+  </data>
+  <data name="DeviceReportFor0From1" xml:space="preserve">
+    <value>Raport urządzenia dla {0} od {1}</value>
+  </data>
+  <data name="PrintError" xml:space="preserve">
+    <value>Błąd: </value>
+  </data>
+  <data name="AllGroups" xml:space="preserve">
+    <value>wszystkie grupy</value>
+  </data>
+  <data name="SaveDeviceReportToPdf" xml:space="preserve">
+    <value>Zapisywanie raportu urządzenia w formacie pdf</value>
+  </data>
+  <data name="ClearSearchTextAndResetDevices" xml:space="preserve">
+    <value>Wyczyść wyszukiwany tekst i zresetuj urządzenia</value>
+  </data>
+  <data name="SaveAPIKeyToRegistry" xml:space="preserve">
+    <value>Zapisz klucz API w rejestrze</value>
+  </data>
+  <data name="ShowDevicesByGroup" xml:space="preserve">
+    <value>Wyświetlanie urządzeń według grup</value>
+  </data>
+  <data name="FetchDevicesFromScalefusionCloud" xml:space="preserve">
+    <value>Pobieranie urządzeń z chmury Scalefusion</value>
+  </data>
+  <data name="ADoubleClickOntoTheCellOpensAnEditorNwindowForTheDeviceSRepairsField" xml:space="preserve">
+    <value>Podwójne kliknięcie na komórce otwiera okno{0}edytora dla pola napraw urządzenia</value>
+  </data>
+</root>
