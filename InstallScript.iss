@@ -123,8 +123,4 @@ begin
       UnInstallOldVersion();
     end;
   end;
-  if CurStep = ssPostInstall then
-  begin;
-    MsgBox('Bitte vor der ersten Benutzung den Scalefusion-Api-Schlüssel eintragen.', mbInformation, MB_OK)
-  end;
 end;
