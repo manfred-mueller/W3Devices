@@ -6,6 +6,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -588,12 +589,17 @@ namespace W3Devices
             }
         }
 
-        private void btnSaveApiKey_Click(object sender, EventArgs e)
+        private void btnSaveApiKey1_Click(object sender, EventArgs e)
         {
             // Save the API key to the Registry when the Save button is clicked
             SaveApiKeyToRegistry(txtApiKey.Text);
         }
 
+        private void btnSaveApiKey_Click(object sender, EventArgs e)
+        {
+            string shortcutPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "W3Devices.lnk");
+            PinToTaskbar(shortcutPath);
+        }
         private void txtApiKey_TextChanged(object sender, EventArgs e)
         {
             // Update the API key when the text in the TextBox changes
@@ -791,7 +797,7 @@ namespace W3Devices
             {
                 using (SaveFileDialog sfd = new SaveFileDialog())
                 {
-                    string currentDate = DateTime.Now.ToString("mm.dd.yyyy"); // Use locale-specific date format
+                    string currentDate = DateTime.Now.ToString("dd.MM.yyyy"); // Use locale-specific date format
                     sfd.Filter = "PDF (*.pdf)|*.pdf";
                     sfd.FileName = String.Format("{0}-{1}.pdf", actualGroup.Replace(" ", ""), currentDate.Replace(".", ""));
                     bool fileError = false;
@@ -946,6 +952,25 @@ namespace W3Devices
             }
 
             return widths;
+        }
+        private static void PinToTaskbar(string shortcutPath)
+        {
+            // PowerShell script to pin the shortcut to the taskbar
+            string psScript = $@"
+            $shell = New-Object -ComObject Shell.Application
+            $folder = $shell.Namespace('{Path.GetDirectoryName(shortcutPath)}')
+            $item = $folder.ParseName('{Path.GetFileName(shortcutPath)}')
+            $item.InvokeVerb('taskbarpin')
+        ";
+
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "powershell",
+                Arguments = $"-Command \"{psScript}\"",
+                UseShellExecute = true,
+                RedirectStandardOutput = false,
+                CreateNoWindow = false
+            });
         }
     }
 }
