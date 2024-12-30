@@ -35,7 +35,7 @@ namespace W3Devices
 
             saveButton = new Button
             {
-                Text = W3Devices.Properties.Resources.SaveAndExit,
+                Text = Properties.Resources.SaveAndExit,
                 Dock = DockStyle.Bottom
             };
 
@@ -46,7 +46,7 @@ namespace W3Devices
             Controls.Add(saveButton);
 
             // Set form properties, including the title with the column header text
-            Text = String.Format(W3Devices.Properties.Resources.Edit0, columnHeader, deviceName);
+            Text = String.Format(Properties.Resources.Edit0, columnHeader, deviceName);
             Size = new System.Drawing.Size(400, 300);
             StartPosition = FormStartPosition.CenterParent;
             Icon = Properties.Resources.w3coach;

@@ -96,7 +96,7 @@ namespace W3Devices
 
         private void InitializeSearchBox()
         {
-            txtSearch.ForeColor = System.Drawing.Color.Gray; // Set initial text color to gray
+            txtSearch.ForeColor = Color.Gray; // Set initial text color to gray
             txtSearch.Text = Properties.Resources.SearchText; // Set initial placeholder text
             txtSearch.GotFocus += txtSearch_GotFocus; // Attach event handler for focus
             txtSearch.LostFocus += txtSearch_LostFocus; // Attach event handler for lost focus
@@ -116,7 +116,7 @@ namespace W3Devices
             if (!searchTextBoxHasFocus)
             {
                 txtSearch.Text = string.Empty; // Clear the placeholder text
-                txtSearch.ForeColor = System.Drawing.Color.Black; // Set text color to black when focused
+                txtSearch.ForeColor = Color.Black; // Set text color to black when focused
                 searchTextBoxHasFocus = true; // Update focus state
             }
         }
@@ -126,7 +126,7 @@ namespace W3Devices
             if (string.IsNullOrWhiteSpace(txtSearch.Text))
             {
                 txtSearch.Text = Properties.Resources.SearchText; // Restore placeholder text if no input and lost focus
-                txtSearch.ForeColor = System.Drawing.Color.Gray; // Set text color back to gray
+                txtSearch.ForeColor = Color.Gray; // Set text color back to gray
                 searchTextBoxHasFocus = false; // Update focus state
             }
 
@@ -158,11 +158,11 @@ namespace W3Devices
             SortAndDisplayDevices(displayedDevices);
             SaveDevicesToCache(displayedDevices);
             InitializeGroupNameComboBox();
-            new ToolTip().SetToolTip(btnFetchDevices, W3Devices.Properties.Resources.FetchDevicesFromScalefusionCloud);
-            new ToolTip().SetToolTip(cmbGroupName, W3Devices.Properties.Resources.ShowDevicesByGroup);
-            new ToolTip().SetToolTip(btnPrint, W3Devices.Properties.Resources.SaveDeviceReportToPdf);
-            new ToolTip().SetToolTip(btnReload, W3Devices.Properties.Resources.ClearSearchTextAndResetDevices);
-            new ToolTip().SetToolTip(btnSaveApiKey, W3Devices.Properties.Resources.SaveAPIKeyToRegistry);
+            new ToolTip().SetToolTip(btnFetchDevices, Properties.Resources.FetchDevicesFromScalefusionCloud);
+            new ToolTip().SetToolTip(cmbGroupName, Properties.Resources.ShowDevicesByGroup);
+            new ToolTip().SetToolTip(btnPrint, Properties.Resources.SaveDeviceReportToPdf);
+            new ToolTip().SetToolTip(btnReload, Properties.Resources.ClearSearchTextAndResetDevices);
+            new ToolTip().SetToolTip(btnSaveApiKey, Properties.Resources.SaveAPIKeyToRegistry);
         }
 
         private async Task<List<DeviceInfo>> FetchDevicesAsync()
@@ -271,7 +271,7 @@ namespace W3Devices
             dataGridView1.Columns["Charging"].Visible = false; // Hide the Charging column
             dataGridView1.Columns["Location"].Visible = false; // Hide the Location column
             dataGridView1.Columns["Remarks"].Visible = false; // Hide the Remarks column
-            dataGridView1.Columns["Repairs"].HeaderCell.ToolTipText = String.Format(W3Devices.Properties.Resources.ADoubleClickOntoTheCellOpensAnEditorNwindowForTheDeviceSRepairsField, Environment.NewLine);
+            dataGridView1.Columns["Repairs"].HeaderCell.ToolTipText = String.Format(Properties.Resources.ADoubleClickOntoTheCellOpensAnEditorNwindowForTheDeviceSRepairsField, Environment.NewLine);
             FormatColumns(dataGridView1); // Set column widths
 
             // Set column headers and disable line wrapping
@@ -466,15 +466,15 @@ namespace W3Devices
                 string message = string.Join(Environment.NewLine, sortedGroupCounts.Select(kvp => $"{kvp.Value.ToString("D2")} - {kvp.Key}"));
 
                 // Add the total count of devices to the message
-                int totalDevices = devices.Count;
-                message += $"\n\nTotal Devices: {totalDevices}";
+//                int totalDevices = devices.Count;
+                //message += $"\n\nTotal Devices: {totalDevices}";
 
                 // Show the message box asynchronously
 //                Task.Run(() => MessageBox.Show(message, "Device Count by Group", MessageBoxButtons.OK, MessageBoxIcon.Information));
             }
             catch (Exception ex)
             {
-                MessageBox.Show(W3Devices.Properties.Resources.ErrorParsingJSON + ex.Message, W3Devices.Properties.Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Properties.Resources.ErrorParsingJSON + ex.Message, Properties.Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return devices;
@@ -507,18 +507,6 @@ namespace W3Devices
             cmbGroupName.SelectedIndexChanged += cmbGroupName_SelectedIndexChanged;
         }
 
-        private List<string> GetUniqueGroupNames()
-        {
-            // Fetch devices from the API or cached data
-            List<DeviceInfo> devices = displayedDevices ?? FetchDevicesFromCache();
-
-            // Get unique GroupNames from the devices
-            return devices
-                .Select(device => device.GroupName)
-                .Where(groupName => !string.IsNullOrEmpty(groupName))
-                .Distinct()
-                .ToList();
-        }
         public class DeviceInfo
         {
             public string GroupName { get; set; }
@@ -598,7 +586,7 @@ namespace W3Devices
         private void btnSaveApiKey_Click(object sender, EventArgs e)
         {
             string shortcutPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "W3Devices.lnk");
-            PinToTaskbar(shortcutPath);
+            LinkToDesktop(shortcutPath);
         }
         private void txtApiKey_TextChanged(object sender, EventArgs e)
         {
@@ -740,14 +728,10 @@ namespace W3Devices
                     // Send the PUT request
                     HttpResponseMessage response = await client.PutAsync(url, content);
                     response.EnsureSuccessStatusCode(); // Throws an exception if the response status code is not successful
-
-                    // Process the response if needed
-                    string responseBody = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine("Update successful: " + responseBody);
                 }
                 catch (HttpRequestException e)
                 {
-                    Console.WriteLine("Request error: " + e.Message);
+                    MessageBox.Show(Properties.Resources.PrintError + e.Message);
                 }
             }
         }
@@ -825,7 +809,7 @@ namespace W3Devices
                                 iTextSharp.text.Font headerFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14, iTextSharp.text.Font.BOLD);
 
                                 // Create the header text
-                                string headerText = String.Format(W3Devices.Properties.Resources.DeviceReportFor0From1, actualGroup, currentDate);
+                                string headerText = String.Format(Properties.Resources.DeviceReportFor0From1, actualGroup, currentDate);
 
                                 // Initialize the document and writer
                                 using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
@@ -846,7 +830,7 @@ namespace W3Devices
                                     float[] columnWidths = CalculateColumnWidths(dataGridView1);
 
                                     // Count visible columns excluding "GroupName"
-                                    int visibleColumns = dataGridView1.Columns.Cast<DataGridViewColumn>().Count(c => c.Visible && c.Name != "GroupName");
+                                    int visibleColumns = dataGridView1.Columns.Cast<DataGridViewColumn>().Count(c => c.Visible && c.Name != "GroupName" && c.Name != "Renew");
 
                                     // Create the PDF table with the number of visible columns (excluding "GroupName")
                                     PdfPTable pdfTable = new PdfPTable(visibleColumns);
@@ -855,10 +839,10 @@ namespace W3Devices
                                     pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
                                     pdfTable.SetWidths(columnWidths); // Set calculated column widths
 
-                                    // Add header cells to the PDF table, excluding "GroupName"
+                                    // Add header cells to the PDF table, excluding "GroupName" and "Renew"
                                     foreach (DataGridViewColumn column in dataGridView1.Columns)
                                     {
-                                        if (column.Visible && column.Name != "GroupName")
+                                        if (column.Visible && column.Name != "GroupName" && column.Name != "Renew")
                                         {
                                             PdfPCell headerCell = new PdfPCell(new Phrase(column.HeaderText, font))
                                             {
@@ -877,7 +861,7 @@ namespace W3Devices
                                             foreach (DataGridViewCell cell in row.Cells)
                                             {
                                                 var column = dataGridView1.Columns[cell.ColumnIndex];
-                                                if (column.Visible && column.Name != "GroupName") // Exclude "GroupName"
+                                                if (column.Visible && column.Name != "GroupName" && column.Name != "Renew") // Exclude "GroupName" and "Renew"
                                                 {
                                                     PdfPCell dataCell = new PdfPCell(new Phrase(cell.Value?.ToString() ?? string.Empty, font))
                                                     {
@@ -897,7 +881,7 @@ namespace W3Devices
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show(W3Devices.Properties.Resources.PrintError + ex.Message);
+                                MessageBox.Show(Properties.Resources.PrintError + ex.Message);
                             }
                         }
                     }
@@ -908,7 +892,7 @@ namespace W3Devices
         // Adjusted method to ignore "GroupName" column when calculating column widths
         private float[] CalculateColumnWidths(DataGridView gridView)
         {
-            int visibleColumnCount = gridView.Columns.Cast<DataGridViewColumn>().Count(c => c.Visible && c.Name != "GroupName");
+            int visibleColumnCount = gridView.Columns.Cast<DataGridViewColumn>().Count(c => c.Visible && c.Name != "GroupName" && c.Name != "Renew");
             float[] widths = new float[visibleColumnCount];
             int colIndex = 0;
 
@@ -921,7 +905,7 @@ namespace W3Devices
             // Calculate the maximum width for each visible column based on both headers and cell content in each row
             foreach (DataGridViewColumn column in gridView.Columns)
             {
-                if (column.Visible && column.Name != "GroupName")
+                if (column.Visible && column.Name != "GroupName" && column.Name != "Renew")
                 {
                     // Measure header text width
                     using (Graphics g = gridView.CreateGraphics())
@@ -953,7 +937,7 @@ namespace W3Devices
 
             return widths;
         }
-        private static void PinToTaskbar(string shortcutPath)
+        private static void LinkToDesktop(string shortcutPath)
         {
             // PowerShell script to pin the shortcut to the taskbar
             string psScript = $@"
