@@ -31,6 +31,7 @@ namespace W3Devices
         private List<DeviceInfo> displayedDevices;
         private string ApiKey;
         private string cachedJsonData;
+        private static readonly HttpClient httpClient = new HttpClient();
         public DeviceInfo devices;
         public string actualGroup = Properties.Resources.AllGroups;
         private bool searchTextBoxHasFocus = false;
@@ -169,43 +170,40 @@ namespace W3Devices
         {
             if (!string.IsNullOrEmpty(cachedJsonData))
             {
-                return ParseJson(cachedJsonData);
+                return await Task.Run(() => ParseJson(cachedJsonData));
             }
 
-            using (HttpClient client = new HttpClient())
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Token", ApiKey);
+            httpClient.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue
             {
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Token", ApiKey);
-                client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue
+                NoCache = true
+            };
+            try
+            {
+                HttpResponseMessage response = await httpClient.GetAsync(ApiUrl);
+                switch (response.StatusCode)
                 {
-                    NoCache = true
-                };
-                try
-                {
-                    HttpResponseMessage response = await client.GetAsync(ApiUrl);
-                    switch (response.StatusCode)
-                    {
-                        case HttpStatusCode.Unauthorized:
-                            MessageBox.Show(Properties.Resources.UnauthorizedAccessPleaseCheckYourAPIKeyAndTryAgain, Properties.Resources.Unauthorized, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return new List<DeviceInfo>();
-                        case HttpStatusCode.NotFound:
-                            MessageBox.Show(Properties.Resources.ResourceNotFoundPleaseVerifyTheAPIURLAndTryAgain, Properties.Resources.NotFound, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return new List<DeviceInfo>();
-                        case HttpStatusCode.NotAcceptable:
-                            MessageBox.Show(Properties.Resources.RequestNotAcceptablePleaseCheckYourRequestHeadersAndTryAgain, Properties.Resources.NotAcceptable, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return new List<DeviceInfo>();
-                        default:
-                            response.EnsureSuccessStatusCode();
-                            break;
-                    }
+                    case HttpStatusCode.Unauthorized:
+                        MessageBox.Show(Properties.Resources.UnauthorizedAccessPleaseCheckYourAPIKeyAndTryAgain, Properties.Resources.Unauthorized, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return new List<DeviceInfo>();
+                    case HttpStatusCode.NotFound:
+                        MessageBox.Show(Properties.Resources.ResourceNotFoundPleaseVerifyTheAPIURLAndTryAgain, Properties.Resources.NotFound, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return new List<DeviceInfo>();
+                    case HttpStatusCode.NotAcceptable:
+                        MessageBox.Show(Properties.Resources.RequestNotAcceptablePleaseCheckYourRequestHeadersAndTryAgain, Properties.Resources.NotAcceptable, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return new List<DeviceInfo>();
+                    default:
+                        response.EnsureSuccessStatusCode();
+                        break;
+                }
 
-                    string responseBody = await response.Content.ReadAsStringAsync();
-                    cachedJsonData = responseBody; // Cache the fetched JSON data
-                    return ParseJson(responseBody);
-                }
-                catch (HttpRequestException ex)
-                {
-                    MessageBox.Show(Properties.Resources.ErrorFetchingData + $"{ex.Message}", Properties.Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                string responseBody = await response.Content.ReadAsStringAsync();
+                cachedJsonData = responseBody; // Cache the fetched JSON data
+                return await Task.Run(() => ParseJson(responseBody));
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show(Properties.Resources.ErrorFetchingData + $"{ex.Message}", Properties.Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return new List<DeviceInfo>(); // Return an empty list in case of error
@@ -255,7 +253,7 @@ namespace W3Devices
 
         private void SortAndDisplayDevices(List<DeviceInfo> devices)
         {
-            displayedDevices = devices.AsParallel()
+            displayedDevices = devices
                 .OrderBy(d => d.GroupName)
                 .ThenBy(d => d.Name)
                 .ToList();
@@ -399,26 +397,30 @@ namespace W3Devices
                     {
                         foreach (var prop in customProperties)
                         {
-                            if (prop is JObject property && (string)property["name"] == "Serial2" && property["value"] != null)
+                            if (prop is JObject property)
                             {
-                                serial2 = property["value"].ToString();
-                                break;
-                            }
-                        }
-                        foreach (var prop in customProperties)
-                        {
-                            if (prop is JObject property && (string)property["name"] == "Remarks" && property["value"] != null)
-                            {
-                                remarks = property["value"].ToString();
-                                break;
-                            }
-                        }
-                        foreach (var prop in customProperties)
-                        {
-                            if (prop is JObject property && (string)property["name"] == "Repairs" && property["value"] != null)
-                            {
-                                repairs = property["value"].ToString();
-                                break;
+                                string propName = (string)property["name"];
+                                string value = property["value"]?.ToString();
+                                if (value == null)
+                                    continue;
+
+                                switch (propName)
+                                {
+                                    case "Serial2":
+                                        serial2 = value;
+                                        break;
+                                    case "Remarks":
+                                        remarks = value;
+                                        break;
+                                    case "Repairs":
+                                        repairs = value;
+                                        break;
+                                }
+
+                                if (serial2 != null && remarks != null && repairs != null)
+                                {
+                                    break;
+                                }
                             }
                         }
                     }
@@ -711,28 +713,26 @@ namespace W3Devices
             string url = $"https://api.scalefusion.com/api/v1/devices/{idValue}/custom_properties.json";
             string oneliner = sendValue.Replace("#", ",").Replace(Environment.NewLine, ",").Replace(",,", ",");
 
-            using (HttpClient client = new HttpClient())
+            // Set the required headers
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Token", apiKey);
+
+            // Prepare the content in form-urlencoded format
+            var content = new FormUrlEncodedContent(new[]
             {
-                // Set the required headers
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Token", apiKey);
+                new KeyValuePair<string, string>("properties", $"[{{\"name\":\"{sendName}\",\"value\":\"{oneliner}\"}}]")
+            });
 
-                // Prepare the content in form-urlencoded format
-                var content = new FormUrlEncodedContent(new[]
-                {
-            new KeyValuePair<string, string>("properties", $"[{{\"name\":\"{sendName}\",\"value\":\"{oneliner}\"}}]")
-        });
-
-                try
-                {
-                    // Send the PUT request
-                    HttpResponseMessage response = await client.PutAsync(url, content);
-                    response.EnsureSuccessStatusCode(); // Throws an exception if the response status code is not successful
-                }
-                catch (HttpRequestException e)
-                {
-                    MessageBox.Show(Properties.Resources.PrintError + e.Message);
-                }
+            try
+            {
+                // Send the PUT request
+                HttpResponseMessage response = await httpClient.PutAsync(url, content);
+                response.EnsureSuccessStatusCode(); // Throws an exception if the response status code is not successful
+            }
+            catch (HttpRequestException e)
+            {
+                MessageBox.Show(Properties.Resources.PrintError + e.Message);
             }
         }
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
