@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "W3Devices"
-#define MyAppVersion "1.2.2"
+#define MyAppVersion "1.2.3"
 #define MyAppExeName MyAppName + ".exe"
 #define MyAppPublisher "NASS e.K."
 #define MyAppURL "https://www.nass-ek.de"

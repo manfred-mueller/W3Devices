@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("NASS e.K.")]
 [assembly: AssemblyProduct("W3Devices")]
-[assembly: AssemblyCopyright("Copyright ©2024")]
+[assembly: AssemblyCopyright("Copyright ©2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,6 +31,6 @@ using System.Runtime.InteropServices;
 // Sie können alle Werte angeben oder Standardwerte für die Build- und Revisionsnummern verwenden,
 // indem Sie "*" wie unten gezeigt eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.2.0")]
-[assembly: AssemblyInformationalVersion("1.2.2")]
+[assembly: AssemblyVersion("1.2.3.0")]
+[assembly: AssemblyInformationalVersion("1.2.3")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

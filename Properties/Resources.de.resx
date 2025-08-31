@@ -294,4 +294,13 @@
   <data name="ADoubleClickOntoTheCellOpensAnEditorNwindowForTheDeviceSRepairsField" xml:space="preserve">
     <value>Ein Doppelklick auf die Zelle öffnet ein Editor-{0}fenster für das Reparaturfeld des Gerätes</value>
   </data>
+  <data name="ErrorFetchingAndDisplayingDevices" xml:space="preserve">
+    <value>Fehler beim Abrufen und Anzeigen von Geräten</value>
+  </data>
+  <data name="ErrorFetchingDevices" xml:space="preserve">
+    <value>Fehler beim Abrufen von Geräten</value>
+  </data>
+  <data name="DevicesListFrom0" xml:space="preserve">
+    <value>Geräteliste von {0}</value>
+  </data>
 </root>

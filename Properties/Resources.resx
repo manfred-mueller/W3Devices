@@ -312,4 +312,13 @@
   <data name="ADoubleClickOntoTheCellOpensAnEditorNwindowForTheDeviceSRepairsField" xml:space="preserve">
     <value>A double click onto the cell opens an editor{0}window for the device's repairs field</value>
   </data>
+  <data name="ErrorFetchingAndDisplayingDevices" xml:space="preserve">
+    <value>Error fetching and displaying devices</value>
+  </data>
+  <data name="ErrorFetchingDevices" xml:space="preserve">
+    <value>Error fetching devices</value>
+  </data>
+  <data name="DevicesListFrom0" xml:space="preserve">
+    <value>Devices list from {0}</value>
+  </data>
 </root>

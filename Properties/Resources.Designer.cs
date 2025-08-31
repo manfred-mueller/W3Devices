@@ -61,6 +61,24 @@ namespace W3Devices.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die A double click onto the cell opens an editor{0}window for the device&apos;s repairs field ähnelt.
+        /// </summary>
+        internal static string ADoubleClickOntoTheCellOpensAnEditorNwindowForTheDeviceSRepairsField {
+            get {
+                return ResourceManager.GetString("ADoubleClickOntoTheCellOpensAnEditorNwindowForTheDeviceSRepairsField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die all groups ähnelt.
+        /// </summary>
+        internal static string AllGroups {
+            get {
+                return ResourceManager.GetString("AllGroups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Api-Key ähnelt.
         /// </summary>
         internal static string ApiKey {
@@ -124,6 +142,15 @@ namespace W3Devices.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Clear search text and reset devices ähnelt.
+        /// </summary>
+        internal static string ClearSearchTextAndResetDevices {
+            get {
+                return ResourceManager.GetString("ClearSearchTextAndResetDevices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Last Connection ähnelt.
         /// </summary>
         internal static string Connection {
@@ -147,6 +174,24 @@ namespace W3Devices.Properties {
         internal static string DeviceName {
             get {
                 return ResourceManager.GetString("DeviceName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Device report for {0} from {1} ähnelt.
+        /// </summary>
+        internal static string DeviceReportFor0From1 {
+            get {
+                return ResourceManager.GetString("DeviceReportFor0From1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Devices list from {0} ähnelt.
+        /// </summary>
+        internal static string DevicesListFrom0 {
+            get {
+                return ResourceManager.GetString("DevicesListFrom0", resourceCulture);
             }
         }
         
@@ -187,11 +232,29 @@ namespace W3Devices.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Error fetching and displaying devices ähnelt.
+        /// </summary>
+        internal static string ErrorFetchingAndDisplayingDevices {
+            get {
+                return ResourceManager.GetString("ErrorFetchingAndDisplayingDevices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Error fetching data:  ähnelt.
         /// </summary>
         internal static string ErrorFetchingData {
             get {
                 return ResourceManager.GetString("ErrorFetchingData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Error fetching devices ähnelt.
+        /// </summary>
+        internal static string ErrorFetchingDevices {
+            get {
+                return ResourceManager.GetString("ErrorFetchingDevices", resourceCulture);
             }
         }
         
@@ -241,11 +304,29 @@ namespace W3Devices.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Fetch devices from Scalefusion cloud ähnelt.
+        /// </summary>
+        internal static string FetchDevicesFromScalefusionCloud {
+            get {
+                return ResourceManager.GetString("FetchDevicesFromScalefusionCloud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die GroupName ähnelt.
         /// </summary>
         internal static string GroupName {
             get {
                 return ResourceManager.GetString("GroupName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Info ähnelt.
+        /// </summary>
+        internal static string Info {
+            get {
+                return ResourceManager.GetString("Info", resourceCulture);
             }
         }
         
@@ -336,6 +417,15 @@ namespace W3Devices.Properties {
         internal static string PleaseWaitWhileFetchingDeviceData {
             get {
                 return ResourceManager.GetString("PleaseWaitWhileFetchingDeviceData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Error:  ähnelt.
+        /// </summary>
+        internal static string PrintError {
+            get {
+                return ResourceManager.GetString("PrintError", resourceCulture);
             }
         }
         
@@ -432,6 +522,24 @@ namespace W3Devices.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Save API key to registry ähnelt.
+        /// </summary>
+        internal static string SaveAPIKeyToRegistry {
+            get {
+                return ResourceManager.GetString("SaveAPIKeyToRegistry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Save device report to pdf ähnelt.
+        /// </summary>
+        internal static string SaveDeviceReportToPdf {
+            get {
+                return ResourceManager.GetString("SaveDeviceReportToPdf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Search in all devices ähnelt.
         /// </summary>
         internal static string Search {
@@ -477,11 +585,11 @@ namespace W3Devices.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die All groups ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Show devices by group ähnelt.
         /// </summary>
-        internal static string AllGroups {
+        internal static string ShowDevicesByGroup {
             get {
-                return ResourceManager.GetString("AllGroups", resourceCulture);
+                return ResourceManager.GetString("ShowDevicesByGroup", resourceCulture);
             }
         }
         
@@ -548,103 +656,13 @@ namespace W3Devices.Properties {
                 return ResourceManager.GetString("YouHaveReachedTheMaximumAPICallsPerDayLimit", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die You have reached the maximum API calls per minute limit. ähnelt.
         /// </summary>
-        internal static string YouHaveReachedTheMaximumAPICallsPerMinuteLimit
-        {
-            get
-            {
+        internal static string YouHaveReachedTheMaximumAPICallsPerMinuteLimit {
+            get {
                 return ResourceManager.GetString("YouHaveReachedTheMaximumAPICallsPerMinuteLimit", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Device report for 0 from 1 ähnelt.
-        /// </summary>
-        internal static string DeviceReportFor0From1
-        {
-            get
-            {
-                return ResourceManager.GetString("DeviceReportFor0From1", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Error: ähnelt.
-        /// </summary>
-        internal static string PrintError
-        {
-            get
-            {
-                return ResourceManager.GetString("PrintError", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Save device report to Pdf ähnelt.
-        /// </summary>
-        internal static string SaveDeviceReportToPdf
-        {
-            get
-            {
-                return ResourceManager.GetString("SaveDeviceReportToPdf", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Clear search text and reset devices ähnelt.
-        /// </summary>
-        internal static string ClearSearchTextAndResetDevices
-        {
-            get
-            {
-                return ResourceManager.GetString("ClearSearchTextAndResetDevices", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Show devices by group ähnelt.
-        /// </summary>
-        internal static string ShowDevicesByGroup
-        {
-            get
-            {
-                return ResourceManager.GetString("ShowDevicesByGroup", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Save API key to registry ähnelt.
-        /// </summary>
-        internal static string SaveAPIKeyToRegistry
-        {
-            get
-            {
-                return ResourceManager.GetString("SaveAPIKeyToRegistry", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Fetch devices from Scalefusion cloud ähnelt.
-        /// </summary>
-        internal static string FetchDevicesFromScalefusionCloud
-        {
-            get
-            {
-                return ResourceManager.GetString("FetchDevicesFromScalefusionCloud", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die A double click onto the cell opens an editor\nwindow for the device's repairs field ähnelt.
-        /// </summary>
-        internal static string ADoubleClickOntoTheCellOpensAnEditorNwindowForTheDeviceSRepairsField
-        {
-            get
-            {
-                return ResourceManager.GetString("ADoubleClickOntoTheCellOpensAnEditorNwindowForTheDeviceSRepairsField", resourceCulture);
             }
         }
     }
