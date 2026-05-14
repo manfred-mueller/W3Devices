@@ -145,7 +145,7 @@
     <value>Nicht akzeptabel</value>
   </data>
   <data name="ErrorFetchingData" xml:space="preserve">
-    <value>Fehler beim Abrufen von Daten: </value>
+    <value>Fehler beim Abrufen der Daten: </value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Fehler</value>
