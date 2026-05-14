@@ -121,7 +121,7 @@
     <value>Suche in allen Geräten</value>
   </data>
   <data name="PleaseEnterYourAPIKeyAndSaveItBeforeFetchingData" xml:space="preserve">
-    <value>Bitte geben Sie Ihren API-Schlüssel ein und speichern Sie ihn, bevor Sie die Daten abrufen.</value>
+    <value>Bitte geben Sie Ihren API-Schlüssel ein, bevor Sie Daten abrufen.</value>
   </data>
   <data name="APIKeyRequired" xml:space="preserve">
     <value>API-Schlüssel erforderlich</value>
@@ -302,5 +302,47 @@
   </data>
   <data name="DevicesListFrom0" xml:space="preserve">
     <value>Geräteliste von {0}</value>
+  </data>
+  <data name="Device" xml:space="preserve">
+    <value>Gerät</value>
+  </data>
+  <data name="AllDevices" xml:space="preserve">
+    <value>Alle Geräte</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Erledigt</value>
+  </data>
+  <data name="Ring" xml:space="preserve">
+    <value>klingeln lasssen</value>
+  </data>
+  <data name="Lock" xml:space="preserve">
+    <value>sperren</value>
+  </data>
+  <data name="Reboot" xml:space="preserve">
+    <value>neu starten</value>
+  </data>
+  <data name="ConfirmRestart" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie {0} neu starten möchten?</value>
+  </data>
+  <data name="ConfirmRestartTitle" xml:space="preserve">
+    <value>Bestätigen Sie den Neustart</value>
+  </data>
+  <data name="BuzzCommandSent" xml:space="preserve">
+    <value>Klingel-Befehl an {0} gesendet</value>
+  </data>
+  <data name="LockCommandSent" xml:space="preserve">
+    <value>Sperr-Befehl an {0} gesendet</value>
+  </data>
+  <data name="RestartCommandSent" xml:space="preserve">
+    <value>Neustart-Befehl an {0} gesendet</value>
+  </data>
+  <data name="Sent" xml:space="preserve">
+    <value>Gesendet</value>
+  </data>
+  <data name="MessageSent" xml:space="preserve">
+    <value>Nachricht gesendet an {0}</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Nachricht senden</value>
   </data>
 </root>

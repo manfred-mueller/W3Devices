@@ -48,8 +48,7 @@ namespace W3Devices
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(4, 34);
             this.dataGridView1.Name = "dataGridView1";
@@ -73,7 +72,7 @@ namespace W3Devices
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(195, 20);
             this.txtSearch.TabIndex = 4;
-            this.txtSearch.Text = W3Devices.Properties.Resources.Search;
+            this.txtSearch.Text = "Search in all devices";
             // 
             // txtApiKey
             // 
@@ -100,7 +99,7 @@ namespace W3Devices
             this.labelApiKey.Name = "labelApiKey";
             this.labelApiKey.Size = new System.Drawing.Size(43, 13);
             this.labelApiKey.TabIndex = 8;
-            this.labelApiKey.Text = W3Devices.Properties.Resources.ApiKey;
+            this.labelApiKey.Text = "Api-Key";
             this.labelApiKey.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // progressBar1
@@ -126,8 +125,8 @@ namespace W3Devices
             this.messageLabel.Name = "messageLabel";
             this.messageLabel.Size = new System.Drawing.Size(1082, 40);
             this.messageLabel.TabIndex = 10;
-            this.messageLabel.Text = W3Devices.Properties.Resources.PleaseEnterYourAPIKeyAndSaveItBeforeFetchingData;
             this.messageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.messageLabel.Visible = false;
             // 
             // btnReload
             // 

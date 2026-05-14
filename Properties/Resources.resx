@@ -32,9 +32,8 @@
     
     Each data row contains a name, and value. The row also contains a 
     type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
+    text/value conversion through the TypeConverter classes
+    associated with the data types.
     
     The mimetype is used for serialized objects, and tells the 
     ResXResourceReader how to depersist the object. This is currently not 
@@ -176,7 +175,7 @@
     <value>Save and Exit</value>
   </data>
   <data name="PleaseEnterYourAPIKeyAndSaveItBeforeFetchingData" xml:space="preserve">
-    <value>Please enter your API key and save it before fetching data.</value>
+    <value>Please save your API key before fetching data.</value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>Success</value>
@@ -320,5 +319,47 @@
   </data>
   <data name="DevicesListFrom0" xml:space="preserve">
     <value>Devices list from {0}</value>
+  </data>
+  <data name="Device" xml:space="preserve">
+    <value>Device</value>
+  </data>
+  <data name="AllDevices" xml:space="preserve">
+    <value>All devices</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="Ring" xml:space="preserve">
+    <value>Ring</value>
+  </data>
+  <data name="Lock" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="Reboot" xml:space="preserve">
+    <value>Reboot</value>
+  </data>
+  <data name="ConfirmRestart" xml:space="preserve">
+    <value>Are you sure you want to reboot {0}?</value>
+  </data>
+  <data name="ConfirmRestartTitle" xml:space="preserve">
+    <value>Confirm Reboot</value>
+  </data>
+  <data name="BuzzCommandSent" xml:space="preserve">
+    <value>Buzz command sent to {0}</value>
+  </data>
+  <data name="LockCommandSent" xml:space="preserve">
+    <value>Lock command sent to {0}</value>
+  </data>
+  <data name="RestartCommandSent" xml:space="preserve">
+    <value>Reboot command sent to {0}</value>
+  </data>
+  <data name="Sent" xml:space="preserve">
+    <value>Sent</value>
+  </data>
+	<data name="SendMessage" xml:space="preserve">
+    <value>Send Message</value>
+  </data>
+	<data name="MessageSent" xml:space="preserve">
+    <value>Message sent to {0}</value>
   </data>
 </root>

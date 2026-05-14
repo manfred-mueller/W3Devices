@@ -70,6 +70,15 @@ namespace W3Devices.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die All devices ähnelt.
+        /// </summary>
+        internal static string AllDevices {
+            get {
+                return ResourceManager.GetString("AllDevices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die all groups ähnelt.
         /// </summary>
         internal static string AllGroups {
@@ -133,6 +142,15 @@ namespace W3Devices.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Buzz command sent to {0} ähnelt.
+        /// </summary>
+        internal static string BuzzCommandSent {
+            get {
+                return ResourceManager.GetString("BuzzCommandSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Charging ähnelt.
         /// </summary>
         internal static string Charging {
@@ -151,11 +169,38 @@ namespace W3Devices.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Are you sure you want to reboot {0}? ähnelt.
+        /// </summary>
+        internal static string ConfirmRestart {
+            get {
+                return ResourceManager.GetString("ConfirmRestart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Confirm Reboot ähnelt.
+        /// </summary>
+        internal static string ConfirmRestartTitle {
+            get {
+                return ResourceManager.GetString("ConfirmRestartTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Last Connection ähnelt.
         /// </summary>
         internal static string Connection {
             get {
                 return ResourceManager.GetString("Connection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Device ähnelt.
+        /// </summary>
+        internal static string Device {
+            get {
+                return ResourceManager.GetString("Device", resourceCulture);
             }
         }
         
@@ -201,6 +246,15 @@ namespace W3Devices.Properties {
         internal static string DevName {
             get {
                 return ResourceManager.GetString("DevName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Done ähnelt.
+        /// </summary>
+        internal static string Done {
+            get {
+                return ResourceManager.GetString("Done", resourceCulture);
             }
         }
         
@@ -358,6 +412,33 @@ namespace W3Devices.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Lock ähnelt.
+        /// </summary>
+        internal static string Lock {
+            get {
+                return ResourceManager.GetString("Lock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Lock command sent to {0} ähnelt.
+        /// </summary>
+        internal static string LockCommandSent {
+            get {
+                return ResourceManager.GetString("LockCommandSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Message sent to {0} ähnelt.
+        /// </summary>
+        internal static string MessageSent {
+            get {
+                return ResourceManager.GetString("MessageSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Model ähnelt.
         /// </summary>
         internal static string Model {
@@ -403,7 +484,7 @@ namespace W3Devices.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Please enter your API key and save it before fetching data. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please save your API key before fetching data. ähnelt.
         /// </summary>
         internal static string PleaseEnterYourAPIKeyAndSaveItBeforeFetchingData {
             get {
@@ -435,6 +516,15 @@ namespace W3Devices.Properties {
         internal static string RateLimitExceeded {
             get {
                 return ResourceManager.GetString("RateLimitExceeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Reboot ähnelt.
+        /// </summary>
+        internal static string Reboot {
+            get {
+                return ResourceManager.GetString("Reboot", resourceCulture);
             }
         }
         
@@ -504,6 +594,24 @@ namespace W3Devices.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Reboot command sent to {0} ähnelt.
+        /// </summary>
+        internal static string RestartCommandSent {
+            get {
+                return ResourceManager.GetString("RestartCommandSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Ring ähnelt.
+        /// </summary>
+        internal static string Ring {
+            get {
+                return ResourceManager.GetString("Ring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Save ähnelt.
         /// </summary>
         internal static string Save {
@@ -554,6 +662,24 @@ namespace W3Devices.Properties {
         internal static string SearchText {
             get {
                 return ResourceManager.GetString("SearchText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Send Message ähnelt.
+        /// </summary>
+        internal static string SendMessage {
+            get {
+                return ResourceManager.GetString("SendMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Sent ähnelt.
+        /// </summary>
+        internal static string Sent {
+            get {
+                return ResourceManager.GetString("Sent", resourceCulture);
             }
         }
         

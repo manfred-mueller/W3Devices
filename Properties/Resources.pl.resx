@@ -303,4 +303,46 @@
   <data name="DevicesListFrom0" xml:space="preserve">
     <value>Lista urządzeń od {0}</value>
   </data>
+  <data name="Device" xml:space="preserve">
+    <value>Urządzenie</value>
+  </data>
+  <data name="AllDevices" xml:space="preserve">
+    <value>Wszystkie urządzenia</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Zrobione</value>
+  </data>
+  <data name="Ring" xml:space="preserve">
+    <value>Pierścień</value>
+  </data>
+  <data name="Lock" xml:space="preserve">
+    <value>Zamek</value>
+  </data>
+  <data name="Reboot" xml:space="preserve">
+    <value>Ponowne uruchomienie</value>
+  </data>
+  <data name="ConfirmRestart" xml:space="preserve">
+    <value>Czy na pewno chcesz ponownie uruchomić komputer {0}?</value>
+  </data>
+  <data name="ConfirmRestartTitle" xml:space="preserve">
+    <value>Potwierdź ponowne uruchomienie</value>
+  </data>
+  <data name="BuzzCommandSent" xml:space="preserve">
+    <value>Polecenie Buzz wysłane do {0}</value>
+  </data>
+  <data name="LockCommandSent" xml:space="preserve">
+    <value>Polecenie blokady wysłane do {0}</value>
+  </data>
+  <data name="RestartCommandSent" xml:space="preserve">
+    <value>Polecenie ponownego uruchomienia wysłane do {0}</value>
+  </data>
+  <data name="Sent" xml:space="preserve">
+    <value>Wysłano</value>
+  </data>
+  <data name="MessageSent" xml:space="preserve">
+    <value>Wiadomość wysłana do: {0}</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Wyślij wiadomość</value>
+  </data>
 </root>
